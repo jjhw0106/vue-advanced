@@ -4,7 +4,7 @@
     <router-link to="/news">News</router-link> |
     <router-link to="/ask">Ask</router-link> |
     <router-link to="/jobs">Jobs</router-link>
-    <home-view>ddd</home-view>
+    <home-view></home-view>
   </div>
 </template>
 
@@ -16,8 +16,8 @@ export default {
 }
 </script>
 
-<style s
-HomeViewcoped>
+<style scoped
+HomeView>
 .header {
   color: white;
   background-color: #42b883;
