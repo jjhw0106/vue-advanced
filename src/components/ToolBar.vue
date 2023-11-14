@@ -16,8 +16,7 @@ export default {
 }
 </script>
 
-<style scoped
-HomeView>
+<style scoped HomeView>
 .header {
   color: white;
   background-color: #42b883;

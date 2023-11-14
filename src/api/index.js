@@ -1,12 +1,30 @@
 import axios from "axios";
 
-export function fetchNewsList(url) {
-  axios.get(url)
-    .then(response => {
-      console.log(response); 
-      this.news = response.data;
-    })
-    .catch((error)=>{
-      console.log(error);
-    })
+// 1. HTTP Request & Response와 관련된 기본 설정
+// prefix url, 토큰값 등등 설정 
+const config = {
+  baseUrl: 'https://api.hnpwa.com/v0/',
+  news: 'news/1.json',
+  asks: 'ask/1.json',
+  newest: 'newest/1.json',
+
+}
+
+// 2. API 함수 정리
+function fetchNewsList() {
+  return axios.get(`${config.baseUrl}news/1.json`);
+}
+
+function fetchAskList() {
+  return axios.get(`${config.baseUrl}ask/1.json`);
+}
+
+function fetchJobList() {
+  return axios.get(`${config.baseUrl}jobs/1.json`);
+}
+
+export {
+  fetchNewsList,
+  fetchAskList,
+  fetchJobList,
 }

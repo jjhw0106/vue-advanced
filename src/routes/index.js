@@ -8,6 +8,10 @@ import ItemView from '../views/UserView.vue';
 
 const routes = [
   {
+    path: '/',
+    component: HomeView,
+  },
+  {
     path: '/news',
     component: NewsView,
   },
