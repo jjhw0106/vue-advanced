@@ -7,6 +7,19 @@ export const store = createStore({
     jobs: [],
     asks: []
   },
+  // getters: [
+  //   ({ commit }) => {
+  //     fetchAskList()
+  //       .then((response) => commit('SET_ASKS', response.data))
+  //       .catch((error) => log(error))
+  //   },
+  // ],
+  getters: {
+    fetchedAsk(state) {
+      return state.asks;
+    }
+  },
+
   mutations: {
     SET_NEWS(state, news) {
       state.news = news;
@@ -17,7 +30,6 @@ export const store = createStore({
     SET_ASKS(state, asks) {
       state.asks = asks;
     }
-
   },
   actions: {
     FETCH_NEWS(context) {
@@ -28,17 +40,18 @@ export const store = createStore({
         })
         .catch((error)=>console.log(error));
     },
-    FETCH_JOBS(context) {
+    FETCH_JOBS({ commit }) {
+      console.log(commit);
       fetchJobList()
         .then((response) => {
-          context.commit('SET_JOBS',response.data);
+          commit('SET_JOBS',response.data);
         })
         .catch((error) => console.log(error))
     },
-    FETCH_ASKS(context) {
+    FETCH_ASKS({ commit }) {
       fetchAskList()
-        .then((response) => context.commit('SET_ASKS', response.data))
-        .catch((error) => console.log(error))
+        .then((response) => commit('SET_ASKS', response.data))
+        .catch((error) => log(error))
     }
   }
 })
