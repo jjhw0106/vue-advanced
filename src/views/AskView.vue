@@ -1,6 +1,11 @@
 <template>
   <div>
-    <div v-for="item in asks" v-bind:key="item">{{ item.title }}</div>
+    <p v-for="item in askItems" v-bind:key="item">
+      <a v-bind:href="item.url">
+        {{ item.title }}
+      </a>
+    </p>
+    <div v-for="item in askItems" v-bind:key="item">{{ item.title }}</div>
   </div>
 </template>
 
@@ -13,7 +18,7 @@ export default {
   computed: {
     // #3
     ...mapGetters({
-      asks:'fetchedAsk'
+      askItems:'fetchedAsk'
     })
     // #1
     // ask() {

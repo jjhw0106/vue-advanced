@@ -24,13 +24,17 @@ const routes = [
     component: JobsView
   },
   {
-    path: '/user',
+    path: '/user/:id',
     component: UserView
   },
+  // {
+  //   path: '/user/:id',
+  //   component: UserView
+  // },
   {
     path: '/item',
     component: ItemView
-  }
+  },
 ];
 
 const router = createRouter({
