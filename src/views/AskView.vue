@@ -1,11 +1,9 @@
 <template>
   <div>
     <p v-for="item in askItems" v-bind:key="item">
-      <a v-bind:href="item.url">
-        {{ item.title }}
-      </a>
+      <router-link :to = "`/item/${item.id}`">{{ item.title }}</router-link>
     </p>
-    <div v-for="item in askItems" v-bind:key="item">{{ item.title }}</div>
+    
   </div>
 </template>
 

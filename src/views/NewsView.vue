@@ -5,7 +5,6 @@
       <small> 
         {{ item.time_ago }} by 
         <router-link :to ="`/user/${item.user}`"> {{ item.user }} </router-link>
-        
       </small>
     </p>
   </div>

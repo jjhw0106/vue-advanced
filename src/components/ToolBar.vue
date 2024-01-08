@@ -3,7 +3,8 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/news">News</router-link> |
     <router-link to="/ask">Ask</router-link> |
-    <router-link to="/jobs">Jobs</router-link>
+    <router-link to="/jobs">Jobs</router-link> |
+    <router-link to="/user/:id">Users</router-link>
     <home-view></home-view>
   </div>
 </template>
