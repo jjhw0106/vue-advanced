@@ -17,6 +17,9 @@ export const store = createStore({
     },
     fetchedItem(state) {
       return state.item;
+    },
+    fetchedJobs(state) {
+      return state.jobs;
     }
   },
   mutations,
