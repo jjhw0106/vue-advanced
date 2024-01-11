@@ -1,4 +1,4 @@
-import { fetchAskList, fetchItemInfo, fetchJobList, fetchNewsList, fetchUserInfo } from '../api/index'
+import { fetchAskList, fetchItemInfo, fetchJobList, fetchNewsList, fetchUserInfo, pushMemNo } from '../api/index'
 
 export default {
   /* context.commit은 두번째 메소드와 같이 { commit }으로 구조분해 할당 할 수 있다. */
@@ -32,5 +32,8 @@ export default {
     fetchItemInfo(item)
       .then((response) => commit('SET_ITEM', response.data))
       .catch((error) => log(error))
+  },
+  PUSH_MEMNO({ commit }, item) {
+    pushMemNo(item)
   }
 }
