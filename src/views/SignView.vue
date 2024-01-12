@@ -1,6 +1,6 @@
 <template>
   <div>
-    <button>
+    <button @click="signUp">
       회원가입
     </button>
     <button @click="pushMemNo">
@@ -10,17 +10,17 @@
 </template>
 
 <script>
-import api from '@/api';
 export default {
   methods: {
-    async pushMemNo() {
+    signUp() {
+      this.$router.push({ 
+        path: '/sign_up'
+      })
+    },
+    pushMemNo() {
       console.log("clicked!!");
-      await api.pushMemNo();
-    }
-    // pushMemNo() {
-    //   console.log("clicked!!");
-    //   this.$store.dispatch('PUSH_MEMNO', item);
-    // }
+      this.$store.dispatch('PUSH_MEMNO');
+    },
   }
 }
 </script>

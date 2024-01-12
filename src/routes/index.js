@@ -2,25 +2,29 @@ import { createRouter, createWebHistory } from 'vue-router';
 import AskView from '../views/AskView.vue';
 import NewsView from '../views/NewsView.vue';
 import JobsView from '../views/JobsView.vue';
-import HomeView from '../views/HomeView.vue';
+import SignView from '../views/SignView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
+import SignUpView from '@/views/SignUpView.vue';
 
 const routes = [
   {
     path: '/',
-    component: HomeView,
+    component: NewsView,
   },
   {
     path: '/news',
+    name: 'news',
     component: NewsView,
   },
   {
     path: '/ask',
+    name: 'ask',
     component: AskView
   },
   {
     path: '/jobs',
+    name: 'jobs',
     component: JobsView
   },
   {
@@ -31,6 +35,10 @@ const routes = [
     path: '/item/:id',
     component: ItemView
   },
+  {
+    path: '/sign_up',
+    component: SignUpView
+  }
 ];
 
 const router = createRouter({

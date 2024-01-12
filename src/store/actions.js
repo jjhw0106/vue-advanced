@@ -33,7 +33,7 @@ export default {
       .then((response) => commit('SET_ITEM', response.data))
       .catch((error) => log(error))
   },
-  PUSH_MEMNO({ commit }, item) {
-    pushMemNo(item)
+  PUSH_MEMNO() {
+    pushMemNo()
   }
 }

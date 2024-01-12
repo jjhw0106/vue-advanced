@@ -28,11 +28,12 @@ function fetchUserInfo(userName) {
 }
 
 function fetchItemInfo(item) {
+  console.log("dddd");
   return axios.get(`${config.baseUrl}item/${item.id}.json`)
 }
 function pushMemNo() {
   console.log('fff');
-  // return axios.get(`${'localhost:3000'}`)
+  return axios.get(`${'http://localhost:3000/test'}`)
 }
 export {
   fetchNewsList,
