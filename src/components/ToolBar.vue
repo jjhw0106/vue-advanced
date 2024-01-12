@@ -1,23 +1,23 @@
 <template>
   <div class="header">
-    <router-link to="/">Home</router-link> |
+    <!-- <router-link to="/">Home</router-link> | -->
     <router-link to="/news">News</router-link> |
     <router-link to="/ask">Ask</router-link> |
-    <router-link to="/jobs">Jobs</router-link>
-    <home-view>ddd</home-view>
+    <router-link to="/jobs">Jobs</router-link> |
+    <router-link to="/user/:id">Users</router-link>
+    <sign-view></sign-view>
   </div>
 </template>
 
 <script>
-import HomeView from '@/views/HomeView.vue'
+import SignView from '@/views/SignView.vue'
 
 export default {
-  components: { HomeView },
+  components: { SignView },
 }
 </script>
 
-<style s
-HomeViewcoped>
+<style scoped SigniView>
 .header {
   color: white;
   background-color: #42b883;

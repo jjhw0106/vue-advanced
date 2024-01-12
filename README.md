@@ -1,24 +1,14 @@
-# vue-news
+## api문서 주소
+|:News:|:https://api.hnpwa.com/v0/news/1.json:|
+Newest	https://api.hnpwa.com/v0/newest/1.json
+Ask	https://api.hnpwa.com/v0/ask/1.json
+Show	https://api.hnpwa.com/v0/show/1.json
+Jobs	https://api.hnpwa.com/v0/jobs/1.json
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+|기능|url|
+|:---|:--|
+|News|https://api.hnpwa.com/v0/news/1.json|
+|Newest|https://api.hnpwa.com/v0/newest/1.json|
+|Ask|https://api.hnpwa.com/v0/ask/1.json|
+|Show|https://api.hnpwa.com/v0/show/1.json|
+|Jobs|https://api.hnpwa.com/v0/jobs/1.json|
