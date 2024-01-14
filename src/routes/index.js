@@ -2,15 +2,14 @@ import { createRouter, createWebHistory } from 'vue-router';
 import AskView from '../views/AskView.vue';
 import NewsView from '../views/NewsView.vue';
 import JobsView from '../views/JobsView.vue';
-import SignView from '../views/SignView.vue';
 import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
 import SignUpView from '@/views/SignUpView.vue';
-
+import SignView from '@/views/SignView.vue';
 const routes = [
   {
     path: '/',
-    component: NewsView,
+    component: SignView,
   },
   {
     path: '/news',

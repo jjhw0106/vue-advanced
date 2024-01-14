@@ -43,7 +43,7 @@ export default {
     // <=> 위의 코드는 store/index에서 getters속성을 정의해 줌으로서, 아래와 같이 바꿀 수 있다.
     // template에서 fetchedItem.title로 접근할 수 있다.
     ...mapGetters(['fetchedItem']),
-  },
+  },  
   created() {
     const item = this.$route.params;
     this.$store.dispatch('FETCH_ITEM', item);
@@ -51,7 +51,7 @@ export default {
 }
 </script>
 
-<style>
+<!-- <style>
 .user-container {
   display: flex;
   align-items: center;
@@ -67,4 +67,4 @@ export default {
 .time {
   font-size: 0.7rem;
 }
-</style>
+</style> -->

@@ -33,7 +33,7 @@ function fetchItemInfo(item) {
 }
 function pushMemNo() {
   console.log('fff');
-  return axios.get(`${'http://localhost:3000/test'}`)
+  return axios.get(`${'http://localhost:3000/'}`)
 }
 export {
   fetchNewsList,

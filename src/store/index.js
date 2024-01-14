@@ -20,6 +20,9 @@ export const store = createStore({
     },
     fetchedJobs(state) {
       return state.jobs;
+    },
+    fetchedUserInfo(state) {
+      return state.user;
     }
   },
   mutations,

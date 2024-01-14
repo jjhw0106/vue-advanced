@@ -12,9 +12,9 @@
     <button>login</button>
   </form>
   <input v-model="memId" placeholder="ID를 입력하세요">
-  <p>{{ memId }}</p>
+  <p>memId </p>
   <input v-model="memPw" placeholder="password를 입력하세요">
-  <p>{{ memPw }}</p>
+  <p> memPw </p>
 </template>
 
 <script>
