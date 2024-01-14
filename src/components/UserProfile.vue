@@ -4,12 +4,11 @@
       <i class="fa-sharp fa-solid fa-user"></i>
     </div>
     <div class="user-description">
+      {{ info.id }}
     </div>
     <div class>
       <router-link :to = "`/user/${fetchedUserInfo.user}`">
         <p>name: {{ fetchedUserInfo.id }}</p>
-        <p>karma: {{ fetchedUserInfo.karma }}</p>
-        <p>created: {{ fetchedUserInfo.created }}</p>
       </router-link> 
       <div class = "time">
         {{ fetchedUserInfo.time_ago }}
@@ -19,10 +18,12 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapGetters } from 'vuex';  
 
 export default {
-  
+  props: {
+    info: Object
+  },
   computed: {
     ...mapGetters(['fetchedUserInfo']),
     // userInfo() {
