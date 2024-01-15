@@ -1,18 +1,6 @@
 <template>
   <div>
-    <p>
-      <user-profile></user-profile>
-      <!-- <small> 
-        <p>name: {{ userInfo.id }} </p>
-        <p>karma: {{ userInfo.karma }} </p>
-        <p>created: {{ userInfo.created }} </p> -->
-        <!-- <p>about: {{ this.$store.state.user.about }} </p> -->
-        <!-- => compute속성에 userInfo()를 정의해주면, this.$store.state.user를 userInfo의 return 값으로 대체할 수 있다.-->
-        <!-- => userInfo()가 아닌 userInfo로 속성값에 접근하듯 사용 -->
-        <!-- <router-link :to ="`/user/${user.user}`"> {{ user.created_time }} </router-link> -->
-        
-      <!-- </small> -->
-    </p>
+      <user-profile :info="userInfo"></user-profile>
   </div>
 </template>
 
@@ -24,9 +12,9 @@ export default {
     UserProfile
   },
   computed: {
-    // userInfo() {
-    //   return this.$store.state.user;
-    // }
+    userInfo() {
+      return this.$store.state.user;
+    }
   },
   created() {
     const userName = this.$route.params.id;

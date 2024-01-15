@@ -1,16 +1,22 @@
 <template>
   <div>
-    <p>
-    <small>
-        <!-- 사용자 상세정보 -->          
+      <!-- 사용자 상세정보 -->          
+      <section>
         <user-profile :info="fetchedItem"></user-profile>
-        <!-- 질문 댓글 -->
-        <section>
-          <!-- <div v-html="fetchedItem.content"> -->
-          <!-- <div v-html="fetchedItem.content"></div> -->
-        </section>
-      </small>
-    </p>
+        <div>
+          <slot name="username">{{ fetchedItem.user }}</slot>
+        </div>
+        <slot name="time">{{ fetchedItem.time_ago }}</slot>
+        <template slot:time>{{ fetchedItem.time_ago }}</template>
+      </section>
+      
+      <!-- 질문 댓글 -->
+      <section>
+        <div v-html="fetchedItem.title"></div>
+      </section>
+      <section>
+        <div v-html="fetchedItem.content"></div>
+      </section>
   </div>
 </template>
 
@@ -33,25 +39,6 @@ export default {
   created() {
     const item = this.$route.params;
     this.$store.dispatch('FETCH_ITEM', item);
-    // this.$store.dispatch('FETCH_USER', item);
   }
 }
 </script>
-
-<!-- <style>
-.user-container {
-  display: flex;
-  align-items: center;
-  padding: 0.5rem;
-
-}
-.fa-user {
-  font-size: 2.5rem
-}
-.user-description {
-  padding-left: 8px;
-}
-.time {
-  font-size: 0.7rem;
-}
-</style> -->

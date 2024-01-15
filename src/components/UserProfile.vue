@@ -4,16 +4,31 @@
       <i class="fa-sharp fa-solid fa-user"></i>
     </div>
     <div class="user-description">
-      {{ info.id }}
+      <!-- <div> username: {{ info.id }} </div>
+      <div class="time"> time: {{ info.created }} </div> -->
+      <slot name="username"></slot>
+      <slot name="time"></slot>
     </div>
-    <div class>
-      <router-link :to = "`/user/${fetchedUserInfo.user}`">
-        <p>name: {{ fetchedUserInfo.id }}</p>
-      </router-link> 
-      <div class = "time">
-        {{ fetchedUserInfo.time_ago }}
+    <!-- <div class="user-description">
+      <div class="" v-if="info.user">
+        <router-link :to = "`/user/${info.id}`">
+          <p>name: {{ info.user }}</p>
+        </router-link> 
+        <br>
+        <div class = "time">
+          time: {{ info.time_ago }}
+        </div>
       </div>
-    </div>
+      <div class="" v-else>
+        <router-link :to = "`/user/${info.id}`">
+          <p>name: {{ info.id }}</p>
+        </router-link> 
+        <br>
+        <div class = "time">
+          time: {{ info.created }}
+        </div>
+      </div>
+    </div> -->
   </div>
 </template>
 
@@ -25,7 +40,7 @@ export default {
     info: Object
   },
   computed: {
-    ...mapGetters(['fetchedUserInfo']),
+    // ...mapGetters(['fetchedUserInfo']),
     // userInfo() {
     //   console.log(this.$store.state.user)
     //   return this.$store.state.user;
