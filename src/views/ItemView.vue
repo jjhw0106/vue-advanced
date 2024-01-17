@@ -2,12 +2,10 @@
   <div>
       <!-- 사용자 상세정보 -->          
       <section>
-        <user-profile :info="fetchedItem"></user-profile>
-        <div>
-          <slot name="username">{{ fetchedItem.user }}</slot>
-        </div>
-        <slot name="time">{{ fetchedItem.time_ago }}</slot>
-        <template slot:time>{{ fetchedItem.time_ago }}</template>
+        <user-profile :info="fetchedItem">
+          <template v-slot:username>{{ fetchedItem.user }}</template>
+          <template #time>{{ fetchedItem.time_ago }}</template>
+        </user-profile>
       </section>
       
       <!-- 질문 댓글 -->

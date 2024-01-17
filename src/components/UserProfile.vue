@@ -4,31 +4,14 @@
       <i class="fa-sharp fa-solid fa-user"></i>
     </div>
     <div class="user-description">
-      <!-- <div> username: {{ info.id }} </div>
-      <div class="time"> time: {{ info.created }} </div> -->
       <slot name="username"></slot>
-      <slot name="time"></slot>
+      <div class="time">
+        <slot name="time"></slot>
+      </div>
+      <div class="time">
+        <slot name="karma"></slot>
+      </div>
     </div>
-    <!-- <div class="user-description">
-      <div class="" v-if="info.user">
-        <router-link :to = "`/user/${info.id}`">
-          <p>name: {{ info.user }}</p>
-        </router-link> 
-        <br>
-        <div class = "time">
-          time: {{ info.time_ago }}
-        </div>
-      </div>
-      <div class="" v-else>
-        <router-link :to = "`/user/${info.id}`">
-          <p>name: {{ info.id }}</p>
-        </router-link> 
-        <br>
-        <div class = "time">
-          time: {{ info.created }}
-        </div>
-      </div>
-    </div> -->
   </div>
 </template>
 
