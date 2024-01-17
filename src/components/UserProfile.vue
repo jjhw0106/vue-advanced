@@ -7,8 +7,6 @@
       <slot name="username"></slot>
       <div class="time">
         <slot name="time"></slot>
-      </div>
-      <div class="time">
         <slot name="karma"></slot>
       </div>
     </div>

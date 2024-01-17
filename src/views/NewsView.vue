@@ -10,9 +10,15 @@ export default {
   },
   mounted() {
     console.log("components set!!");
+  },
+  created() {
+    const item = this.$route.params;
+    console.log(item);
+    this.$store.dispatch('FETCH_NEWS', item);
+
   }
 }
 </script>
 
 <style scoped>
-</style>
+</style>../utils/bus.js

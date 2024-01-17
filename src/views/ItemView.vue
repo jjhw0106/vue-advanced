@@ -3,7 +3,11 @@
       <!-- 사용자 상세정보 -->          
       <section>
         <user-profile :info="fetchedItem">
-          <template v-slot:username>{{ fetchedItem.user }}</template>
+          <template #username>
+            <router-link :to="`/user/${fetchedItem.user}`">
+              {{ fetchedItem.user }}
+            </router-link>
+          </template>
           <template #time>{{ fetchedItem.time_ago }}</template>
         </user-profile>
       </section>
@@ -34,9 +38,6 @@ export default {
     // template에서 fetchedItem.title로 접근할 수 있다.
     ...mapGetters(['fetchedItem']),
   },  
-  created() {
-    const item = this.$route.params;
-    this.$store.dispatch('FETCH_ITEM', item);
-  }
+  
 }
 </script>
