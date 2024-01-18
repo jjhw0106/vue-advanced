@@ -33,8 +33,15 @@ function fetchItemInfo(item) {
 }
 function pushMemNo() {
   console.log('fff');
-  return axios.get(`${'http://localhost:3000/'}`)
+  return axios.get(`${'http://localhost:3000/test'}`)
 }
+async function getRecords() {
+  const response = await axios.get(`${'http://localhost:3000/calendar'}`);
+  console.log('response:');
+  // console.log(response.data[0].clear_record);
+  console.log(response.data);
+}
+
 export {
   fetchNewsList,
   fetchAskList,
@@ -42,4 +49,5 @@ export {
   fetchUserInfo,
   fetchItemInfo,
   pushMemNo,
+  getRecords,
 }   

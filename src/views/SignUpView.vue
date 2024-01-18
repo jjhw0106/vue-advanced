@@ -1,5 +1,4 @@
 <template>
-
   <form action="">
     <div>
       <label for="username">id: </label>
@@ -14,7 +13,7 @@
   <input v-model="memId" placeholder="ID를 입력하세요">
   <p>memId </p>
   <input v-model="memPw" placeholder="password를 입력하세요">
-  <p> memPw </p>
+  <p>memPw</p>
 </template>
 
 <script>
