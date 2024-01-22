@@ -12,7 +12,7 @@ export default {
     console.log(commit);
     fetchJobList()
       .then((response) => { 
-        commit('SET_JOBS',response.data);
+        commit('SET_JOBS',response.data)
       })
       .catch((error) => console.log(error))
   },
@@ -34,7 +34,6 @@ export default {
   RESET_STATE({commit}, state) {
     console.log("actions!!!!!!");
     commit('CLEAR_STATE', state);
-    
   },
   PUSH_MEMNO() {
     pushMemNo()
