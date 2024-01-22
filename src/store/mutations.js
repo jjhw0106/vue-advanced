@@ -13,5 +13,11 @@ export default {
   },
   SET_ITEM(state, item) {
     state.item = item;
+  },
+  CLEAR_STATE(state) {
+    Object.keys(state).forEach(key=>{
+      state[key] = null;
+      state["loading"] = true;  
+    })
   }
 }

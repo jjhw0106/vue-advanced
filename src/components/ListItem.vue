@@ -32,14 +32,14 @@
 
 <script>
 export default {
+  beforeMount() {
+    this.$store.state.loading = true
+  },
   created() {
     const name = this.$route.name
     let data
-    console.log("==============");
-    console.log(name);
     if (name === 'news') {
       data = 'FETCH_NEWS';
-      // this.$store.dispatch('FETCH_NEWS');
     }
     else if (name === 'ask') {
       data = 'FETCH_ASKS';
@@ -47,9 +47,14 @@ export default {
     else if (name === 'jobs') {
       data = 'FETCH_JOBS';
     }
-    this.$store.dispatch(data);
+    setTimeout(()=> {
+      this.$store.dispatch(data)
+        .then(this.$store.state.loading = false)
+    }, 1000)
   },
-  
+  unmounted() {
+    this.$store.dispatch('RESET_STATE');
+  },
   computed: {
     listItems() {
       const name = this.$route.name;

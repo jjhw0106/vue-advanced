@@ -31,10 +31,10 @@ export default {
       .then((response) => commit('SET_ITEM', response.data))
       .catch((error) => console.log(error))
   },
-  TOGGLE_LOADING() {
-    fetchItemInfo(item)
-    .then((response) => commit('SET_ITEM', response.data))
-    .catch((error) => console.log(error))
+  RESET_STATE({commit}, state) {
+    console.log("actions!!!!!!");
+    commit('CLEAR_STATE', state);
+    
   },
   PUSH_MEMNO() {
     pushMemNo()
