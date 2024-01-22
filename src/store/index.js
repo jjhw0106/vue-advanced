@@ -10,6 +10,7 @@ export const store = createStore({
     asks: [],
     user: {},
     item: {},
+    loading: Boolean,
   },
   getters: {
     fetchedAsk(state) {
@@ -23,6 +24,9 @@ export const store = createStore({
     },
     fetchedUserInfo(state) {
       return state.user;
+    },
+    getLoadingStatus(state) {
+      return state.loading
     }
   },
   mutations,

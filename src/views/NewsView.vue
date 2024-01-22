@@ -8,17 +8,22 @@ export default {
   components: {
     ListItem,
   },
+  beforeMount() {
+    this.$store.state.loading = true;
+  },
   mounted() {
     console.log("components set!!");
+    setTimeout(()=>this.$store.state.loading = false, 3000);
   },
   created() {
+    // this.$store.
+    this.$store.state.loading = true;
     const item = this.$route.params;
-    console.log(item);
     this.$store.dispatch('FETCH_NEWS', item);
-
+    
   }
 }
 </script>
 
 <style scoped>
-</style>../utils/bus.js
+</style>
