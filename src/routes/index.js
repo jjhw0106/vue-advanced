@@ -6,6 +6,8 @@ import UserView from '../views/UserView.vue';
 import ItemView from '../views/ItemView.vue';
 import SignUpView from '@/views/SignUpView.vue';
 import SignView from '@/views/SignView.vue';
+import createListView from '../views/CreateListView.js';
+
 const routes = [
   {
     path: '/',
@@ -14,18 +16,33 @@ const routes = [
   {
     path: '/news',
     name: 'news',
-    component: NewsView,
+    component: createListView('NewsView'),
   },
   {
     path: '/ask',
     name: 'ask',
-    component: AskView
+    component: createListView('AskView')
   },
   {
     path: '/jobs',
     name: 'jobs',
-    component: JobsView
+    component: createListView('JobsView')
   },
+  // {
+  //   path: '/news',
+  //   name: 'news',
+  //   component: NewsView,
+  // },
+  // {
+  //   path: '/ask',
+  //   name: 'ask',
+  //   component: AskView
+  // },
+  // {
+  //   path: '/jobs',
+  //   name: 'jobs',
+  //   component: JobsView
+  // },
   {
     path: '/user/:id',
     component: UserView

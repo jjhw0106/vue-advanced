@@ -11,6 +11,7 @@ export const store = createStore({
     user: {},
     item: {},
     loading: Boolean,
+    list: [],
   },
   getters: {
     fetchedAsk(state) {
