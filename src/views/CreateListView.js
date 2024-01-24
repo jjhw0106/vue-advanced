@@ -11,15 +11,20 @@ export default function createListView(name) {
       ... 
     */
     name,
-    beforeMount() {
-      this.$store.state.loading = true
+    mounted() {
+      console.log("mount!!");
+      setTimeout(() => {
+        this.$store.state.loading = false
+      }, 500);
     },
     created() {
+      console.log("created!!");
+      this.$store.state.loading = true
       const name = this.$route.name
-      setTimeout(()=> {
-        this.$store.dispatch('FETCH_LIST', name)
-          .then(this.$store.state.loading = false)
-      }, 1000)
+      this.$store.dispatch('FETCH_LIST', name)
+        .then(console.log("this.$store.state.loading = false"))
+      // setTimeout(()=> {
+      // }, 1000)
     },
     // unmounted() {
     //   this.$store.dispatch('RESET_STATE');
