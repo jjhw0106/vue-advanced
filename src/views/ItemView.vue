@@ -30,6 +30,10 @@ export default {
   components: {
     UserProfile
   },
+  created() {
+    const id = this.$route.params;
+    this.$store.dispatch("FETCH_ITEM", id);
+  },
   computed: {
     // itemInfo() {
     //   return this.$store.state.item
