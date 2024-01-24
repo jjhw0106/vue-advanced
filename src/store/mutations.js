@@ -18,7 +18,7 @@ export default {
   SET_LIST(state, list) {
     state.list = list
   },
-  CLEAR_STATE(state) {
+  CLEAR_STATE(state,) {
     Object.keys(state).forEach(key=>{
       state[key] = null;
       state["loading"] = true;  
