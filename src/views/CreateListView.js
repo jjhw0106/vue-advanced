@@ -10,6 +10,7 @@ export default function createListView(name) {
       components: {}
       ... 
     */
+    name,
     beforeMount() {
       this.$store.state.loading = true
     },
