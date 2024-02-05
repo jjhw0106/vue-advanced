@@ -1,5 +1,5 @@
 import axios from "axios";
-
+import { handleException } from '../utils/handler'
 // 1. HTTP Request & Response와 관련된 기본 설정
 // prefix url, 토큰값 등등 설정 
 const config = {
@@ -7,26 +7,40 @@ const config = {
 }
 
 // 2. API 함수 정리
-function fetchList(pageName) {
-  return axios.get(`${config.baseUrl}${pageName}/1.json`)
+async function fetchList(pageName) {
+  try {
+    return await axios.get(`${config.baseUrl}${pageName}/1.json`)
+  } catch (error) {
+    handleException(error);
+  }
 }
 
-function fetchUserInfo(userName) {
-  console.log("userInfo!!!!!!!!!!!");
-  return axios.get(`${config.baseUrl}user/${userName}.json`);
+async function fetchUserInfo(userName) {
+  try {
+    return await axios.get(`${config.baseUrl}user/${userName}.json`);
+  } catch (error) {
+    handleException(error);
+  }
 }
 
-function fetchItemInfo(item) {
-  console.log("dddd");
-  return axios.get(`${config.baseUrl}item/${item.id}.json`)
+async function fetchItemInfo(item) {
+  try {
+    return await axios.get(`${config.baseUrl}item/${item.id}.json`)
+  } catch (error) {
+    handleException(error);
+  }
 }
-function pushMemNo() {
-  return axios.get(`${'http://localhost:3000/test'}`)
+async function pushMemNo() {
+  return await axios.get(`${'http://localhost:3000/test'}`)
 }
 async function getRecords() {
-  const response = await axios.get(`${'http://localhost:3000/calendar'}`);
-  console.log('response:');
-  console.log(response.data);
+  try {
+    const response = await axios.get(`${'http://localhost:3000/calendar'}`);
+    console.log('response:');
+    console.log(response.data);
+  } catch (error) {
+    handleException(error);
+  }
 }
 
 export {
