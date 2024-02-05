@@ -10,6 +10,8 @@ export const store = createStore({
     asks: [],
     user: {},
     item: {},
+    loading: Boolean,
+    list: [],
   },
   getters: {
     fetchedAsk(state) {
@@ -20,6 +22,12 @@ export const store = createStore({
     },
     fetchedJobs(state) {
       return state.jobs;
+    },
+    fetchedUserInfo(state) {
+      return state.user;
+    },
+    getLoadingStatus(state) {
+      return state.loading
     }
   },
   mutations,

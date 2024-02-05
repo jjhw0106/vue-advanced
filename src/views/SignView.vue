@@ -6,6 +6,9 @@
     <button @click="pushMemNo">
       로그인
     </button>
+    <button @click="getCalendar">
+      캘린더 정보 받아오기
+    </button>
   </div>
 </template>
 
@@ -21,6 +24,10 @@ export default {
       console.log("clicked!!");
       this.$store.dispatch('PUSH_MEMNO');
     },
+    getCalendar() {
+      console.log("Calendar!!");
+      this.$store.dispatch('GET_RECORDS');
+    }
   }
 }
 </script>

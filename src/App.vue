@@ -3,6 +3,7 @@
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
     <tool-bar></tool-bar>
+    <spinner :loading="true"></spinner>
     <transition name ="page">
       <router-view></router-view>
     </transition>
@@ -11,9 +12,13 @@
 
 <script>
 import ToolBar from './components/ToolBar.vue'
+import Spinner from './components/Spinner.vue'
 
 export default {
-  components: { ToolBar },
+  components: { 
+    ToolBar,
+    Spinner
+  },
 }
 </script>
 
