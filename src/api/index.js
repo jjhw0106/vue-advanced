@@ -36,7 +36,8 @@ function pushMemNo() {
   return axios.get(`${'http://localhost:3000/test'}`)
 }
 async function getRecords() {
-  const response = await axios.get(`${'http://localhost:3000/calendar'}`);
+  const response = await axios.get(`${'http://192.168.0.102:8081/test'}`);
+  // const response = await axios.get(`${'http://localhost:3000/calendar'}`);
   console.log('response:');
   // console.log(response.data[0].clear_record);
   console.log(response.data);
