@@ -10,8 +10,8 @@ export default {
     ListItem,
   },
   created() {
-    const item = this.$route.params;
-    this.$store.dispatch('FETCH_JOBS', item);
+    // const item = this.$route.params;
+    // this.$store.dispatch('FETCH_JOBS', item);
   }
 }
 </script>

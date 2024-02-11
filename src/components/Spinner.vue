@@ -1,5 +1,5 @@
 <template>
-  <div class="lds-facebook" v-if="loading">
+  <div class="lds-facebook" v-if="this.$store.state.loading">
     <div>
     </div>
     <div>
