@@ -34,17 +34,22 @@ async function pushMemNo() {
   return await axios.get(`${'http://localhost:3000/test'}`)
 }
 async function getRecords() {
-  const ngrokUrl = 'https://d0bc-211-235-64-66.ngrok-free.app/calendar/records'
-  const response = await axios.get(ngrokUrl, {
-    headers: {
-      'ngrok-skip-browser-warning': 'true'
-    }
-  });
+
+  try {
+    const ngrokUrl = 'https://d0bc-211-235-64-66.ngrok-free.app/calendar/records'
+    const response = await axios.get(ngrokUrl, {
+      headers: {
+        'ngrok-skip-browser-warning': 'true'
+      }
+    });
+    console.log(response.data);   
+    return response.data;
+  } catch (error) {
+    handleException(error);
+  }
   
   // const response = await axios.get(`${'http://192.168.0.102:8081/test'}`);
   // const response = await axios.get(`${'http://localhost:3000/calendar'}`);
-  console.log('response:');
-  console.log(response.data);
 }
 
 export {
