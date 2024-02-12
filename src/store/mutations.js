@@ -21,7 +21,7 @@ export default {
   CLEAR_STATE(state,) {
     Object.keys(state).forEach(key=>{
       state[key] = null;
-      state["loading"] = true;  
+      state["loading"] = true;
     })
   }
 }

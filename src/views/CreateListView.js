@@ -11,6 +11,7 @@ export default function createListView(name) {
       ... 
     */
     name,
+<<<<<<< HEAD
     beforeMount() {
       // setTimeout(()=> {
       //   this.$store.state.loading = false
@@ -23,6 +24,22 @@ export default function createListView(name) {
       // this.$store.state.loading = false
       // const name = this.$route.name
       // this.$store.dispatch('FETCH_LIST', name)
+=======
+    mounted() {
+      console.log("mount!!");
+      setTimeout(() => {
+        this.$store.state.loading = false
+      }, 500);
+    },
+    created() {
+      console.log("created!!");
+      this.$store.state.loading = true
+      const name = this.$route.name
+      this.$store.dispatch('FETCH_LIST', name)
+        .then(console.log("this.$store.state.loading = false"))
+      // setTimeout(()=> {
+      // }, 1000)
+>>>>>>> 2e08e6be5e2d8fbf5a618f58f179c1ce832a63b4
     },
     // unmounted() {
     //   this.$store.dispatch('RESET_STATE');
